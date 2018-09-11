@@ -10,6 +10,8 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
+$root = "http://localhost:8080";
+
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -47,16 +49,16 @@ AppAsset::register($this);
     <body>
 
     <nav class="menu-navigation-icons">
-        <a href="http://localhost:8080/advanced/frontend/web/" class="menu-magenta"><i class="fa fa-home"></i><span>Início</span></a>
-        <a href="http://localhost:8080/advanced/frontend/web/" class="menu-blue"><i class="fa fa-code"></i><span>Code</span></a>
-        <a href="http://localhost:8080/advanced/frontend/web/index.php?r=site%2Flogout" class="menu-yellow"><i class="fa fa-plane"></i><span>Travel</span></a>
-        <a href="http://localhost:8080/advanced/frontend/web/index.php?r=site%2Fcontact" class="menu-green"><i class="fa fa-comment-o"></i><span>Fale Conosco</span></a>
+        <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/index'])?>" class="menu-magenta"><i class="fa fa-home"></i><span>Início</span></a>
+        <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/index'])?>" class="menu-blue"><i class="fa fa-code"></i><span>Code</span></a>
+        <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/about'])?>" class="menu-yellow"><i class="fa fa-plane"></i><span>Travel</span></a>
+        <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/contact'])?>" class="menu-green"><i class="fa fa-comment-o"></i><span>Fale Conosco</span></a>
         <!-- sem usuário logado no sistema -->
-        <?php if (!Yii::$app->user->isGuest){ ?>
-            <a href="http://localhost:8080/advanced/frontend/web/index.php?r=site%2Flogin" class="menu-red"><i class="fa fa-user"></i><span>Login</span></a>
-            <a href="http://localhost:8080/advanced/frontend/web/index.php?r=site%2Fsignup" class="menu-contact"><i class="glyphicon glyphicon-open"></i><span>Cadastrar-se</span></a>
+        <?php if (Yii::$app->user->isGuest){ ?>
+            <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/login'])?>" class="menu-red"><i class="fa fa-user"></i><span>Login</span></a>
+            <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/signup'])?>" class="menu-contact"><i class="glyphicon glyphicon-open"></i><span>Cadastrar-se</span></a>
         <?php } else { ?>
-            <a href="http://localhost:8080/advanced/frontend/web/index.php?r=site%2Flogout" class="menu-red"><i class="glyphicon glyphicon-log-out"></i><span>Sair</span> </a>
+            <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/logout'])?>" class="menu-red"><i class="glyphicon glyphicon-log-out"></i><span>Sair</span> </a>
         <?php }?>
     </nav>
 
