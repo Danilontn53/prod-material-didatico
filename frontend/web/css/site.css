@@ -1,0 +1,306 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: "\e151";
+}
+
+a.desc:after {
+    content: "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view td {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+    padding: 15px;
+    border: none;
+}
+
+@media(max-width:767px) {
+    .nav li > form > button.logout {
+        display:block;
+        text-align: left;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+    text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+    outline: none;
+}
+
+.menu-navigation-icons {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size:0;
+    background-color: aliceblue;
+}
+
+.caminho {
+    position: relative;
+}
+
+.menu-navigation-icons a {
+    display: inline-block;
+    color: #ffffff;
+    background-color: #232526;
+    font-size: 40px;
+    font-weight: bold;
+    box-shadow: 1px 2px 1px 0 rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 136px;
+    height: 109px;
+}
+
+.menu-navigation-icons a:hover{
+    opacity:0.92;
+}
+
+.menu-navigation-icons a i {
+    display: block;
+    line-height: 2;
+}
+
+.menu-navigation-icons a span {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu colors */
+
+.menu-navigation-icons a.menu-magenta	{ background-color: #dc68bf; }
+.menu-navigation-icons a.menu-magenta i { color: #9d518a; }
+
+.menu-navigation-icons a.menu-blue		{ background-color: #57b2d8; }
+.menu-navigation-icons a.menu-blue i	{ color: #3e8fb1; }
+
+.menu-navigation-icons a.menu-green		{ background-color: #8ccc7a; }
+.menu-navigation-icons a.menu-green i	{ color: #6fad5e; }
+
+.menu-navigation-icons a.menu-yellow	{ background-color: #dadf50; }
+.menu-navigation-icons a.menu-yellow i	{ color: #babe4a; }
+
+.menu-navigation-icons a.menu-red 		{ background-color: #f26262; }
+.menu-navigation-icons a.menu-red i		{ color: #d34646; }
+
+.menu-navigation-icons a.menu-contact 		{ background-color: #2a568c; }
+.menu-navigation-icons a.menu-contact i		{ color: #5d81ad; }
+/* Make this page responsive */
+
+.slicknav_menu {
+    display:none;
+}
+
+@media (max-width: 800px) {
+    .menu-navigation-icons{
+        display:none;
+    }
+
+    .slicknav_nav a i {
+        display: none;
+    }
+
+    .slicknav_menu {
+        display:block;
+    }
+}
+
+.barra-nome-usuario {
+    background-color: #CFD0D2;
+    border: none;
+    border-radius: 0px;
+    box-sizing: border-box;
+    display: block;
+    font-size: 0.75em;
+    font-weight: normal;
+    min-height: 30px;
+    padding: 0.7em 0 0.7em 0;
+    text-align: right;
+}
+
+/*----- Breadcrumb -----*/
+.bloco_breadcrumb{
+    /*background-color: #668bd4;*/
+    background-color: #f5f5f5;
+    border-radius: 0;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 10px !important;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 0.75em;
+    font-weight: normal;
+    min-height: 30px;
+    position: relative;
+    top: -35px
+}
+
+.bloco_breadcrumb label{
+    display: inline;
+    font-size: 9px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.bloco_breadcrumb .breadcrumb{
+    /*padding: 30px 0;
+    margin-bottom: 0px;*/
+    background-color: transparent;
+    border-radius: 0px;
+    display: inline;
+    font-size: 10px;
+    font-weight: normal;
+    list-style: none;
+    padding: 1.9em 0;
+
+}
+
+.bloco_breadcrumb .breadcrumb li{
+    display: inline-block;
+    font-size: 0.95em;
+    text-transform: uppercase;
+}
+
+.bloco_breadcrumb .breadcrumb li:first-child:before{
+    content: normal !important;
+}
+
+.bloco_breadcrumb .breadcrumb li:before {
+    color: #777777 !important;
+    content: ">" !important;
+    padding: 0 0.35em;
+}
+
+.bloco_breadcrumb .breadcrumb li a {
+    /*margin-right: 3px;*/
+    color: #2C66CE;
+    font-size: 0.95em;
+    text-transform: uppercase;
+}
+
+.bloco_breadcrumb .breadcrumb li a:hover, .bloco_breadcrumb .breadcrumb li a:focus{
+    text-decoration: underline;
+}
+
+.nome_usuario_header {
+    /*margin: 3px 700px 0px 60px;*/
+    float: right;
+    text-transform: uppercase;
+    display: inline;
+    font-size: 9px;
+    font-weight: normal;
+    /*color: #285e8e;*/
+    /*font-size: 12px;*/
+}
+
+.left{
+    background-color: #f5f5f5;
+    border-radius: 0;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 10px !important;
+    border: none;
+    box-sizing: border-box;
+    display: block;
+    font-size: 0.75em;
+    font-weight: normal;
+    min-height: 30px;
+    height: 35px;
+}
+
