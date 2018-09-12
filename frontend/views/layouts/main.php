@@ -12,6 +12,7 @@ use common\widgets\Alert;
 
 $root = "http://localhost:8080";
 
+error_log(print_r(Yii::$app->user->identity, true));
 AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
@@ -35,15 +36,7 @@ AppAsset::register($this);
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Icons Navigation</title>
-
-        <link rel="stylesheet" href="assets/demo.css">
-        <link rel="stylesheet" href="assets/navigation-icons.css">
-        <link rel="stylesheet" href="assets/slicknav/slicknav.min.css">
-
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-
-
     </head>
 
     <body>
@@ -58,16 +51,32 @@ AppAsset::register($this);
             <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/login'])?>" class="menu-red"><i class="fa fa-user"></i><span>Login</span></a>
             <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/signup'])?>" class="menu-contact"><i class="glyphicon glyphicon-open"></i><span>Cadastrar-se</span></a>
         <?php } else { ?>
-            <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/logout'])?>" class="menu-red"><i class="glyphicon glyphicon-log-out"></i><span>Sair</span> </a>
+<!--            <a href="--><?php //Html::beginForm(['/site/logout'] , 'post')?><!--" class="menu-red"> <i class="glyphicon glyphicon-log-out"></i><span>Sair</span> </a>-->
+        <a class="menu-logout">
+            <i class="glyphicon glyphicon-log-out"></i>
+            <span> <?=
+                Html::beginForm(['/site/logout'] , 'post')
+                . Html::submitButton(
+                    'Sair' ,
+                    ['class' => 'btn-logout']
+                )
+                . Html::endForm()
+                ?>
+            </span>
+        </a>
         <?php }?>
     </nav>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="assets/slicknav/jquery.slicknav.min.js"></script>
 
     <script>
         $(function(){
-            $('.menu-navigation-icons').slicknav();
+            $('.menu-navigation-icons').slicknav({
+                label: '',
+                duration: 1000,
+                easingOpen: "easeOutBounce", //available with jQuery UI
+                prependTo:'#demo2'
+            });
         });
     </script>
 
@@ -119,7 +128,7 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
 
-        <?php    echo "<span class='nome_usuario_header'>Usuário(a): Danilo Antônio</span>"; ?>
+        <?php if (!Yii::$app->user->isGuest)   echo "<span class='nome_usuario_header'>Usuário(a): " . Yii::$app->user->identity->username . "</span>"; ?>
     </nav>
 
     <div class="container">

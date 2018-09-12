@@ -11,7 +11,7 @@ body {
 }
 
 .wrap > .container {
-    padding: 70px 15px 20px;
+    /*padding: 70px 15px 20px;*/
 }
 
 .footer {
@@ -163,22 +163,25 @@ a.desc:after {
 
 /* Menu colors */
 
-.menu-navigation-icons a.menu-magenta	{ background-color: #dc68bf; }
+.menu-navigation-icons a.menu-magenta	{ background-color: #dc68bf; vertical-align: top;}
 .menu-navigation-icons a.menu-magenta i { color: #9d518a; }
 
-.menu-navigation-icons a.menu-blue		{ background-color: #57b2d8; }
+.menu-navigation-icons a.menu-blue		{ background-color: #57b2d8; vertical-align: top;}
 .menu-navigation-icons a.menu-blue i	{ color: #3e8fb1; }
 
-.menu-navigation-icons a.menu-green		{ background-color: #8ccc7a; }
+.menu-navigation-icons a.menu-green		{ background-color: #8ccc7a; vertical-align: top;}
 .menu-navigation-icons a.menu-green i	{ color: #6fad5e; }
 
-.menu-navigation-icons a.menu-yellow	{ background-color: #dadf50; }
+.menu-navigation-icons a.menu-yellow	{ background-color: #dadf50; vertical-align: top;}
 .menu-navigation-icons a.menu-yellow i	{ color: #babe4a; }
 
-.menu-navigation-icons a.menu-red 		{ background-color: #f26262; }
+.menu-navigation-icons a.menu-red 		{ background-color: #f26262; vertical-align: top;}
 .menu-navigation-icons a.menu-red i		{ color: #d34646; }
 
-.menu-navigation-icons a.menu-contact 		{ background-color: #2a568c; }
+.menu-navigation-icons a.menu-logout 		{ background-color: #f26262; vertical-align: bottom;}
+.menu-navigation-icons a.menu-logout i		{ color: #d34646; }
+
+.menu-navigation-icons a.menu-contact 		{ background-color: #2a568c; vertical-align: top;}
 .menu-navigation-icons a.menu-contact i		{ color: #5d81ad; }
 /* Make this page responsive */
 
@@ -302,5 +305,25 @@ a.desc:after {
     font-weight: normal;
     min-height: 30px;
     height: 35px;
+}
+
+.btn-logout{
+    font-size: 11px;
+    background-color: transparent;
+    display: inline;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: relative;
+    top: -16px;
 }
 
