@@ -127,7 +127,7 @@ AppAsset::register($this);
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
 
-        <?php if (!Yii::$app->user->isGuest)   echo "<span class='nome_usuario_header'>Usuário(a): " . Yii::$app->user->identity->username . "</span>"; ?>
+        <?php if (!Yii::$app->user->isGuest)   echo "<span class='nome_usuario_header'>Usuário(a): " . Yii::$app->user->identity->nome . "</span>"; ?>
     </nav>
 
     <div class="container">
