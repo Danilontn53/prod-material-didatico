@@ -51,7 +51,6 @@ AppAsset::register($this);
             <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/login'])?>" class="menu-red"><i class="fa fa-user"></i><span>Login</span></a>
             <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/signup'])?>" class="menu-contact"><i class="glyphicon glyphicon-open"></i><span>Cadastrar-se</span></a>
         <?php } else { ?>
-<!--            <a href="--><?php //Html::beginForm(['/site/logout'] , 'post')?><!--" class="menu-red"> <i class="glyphicon glyphicon-log-out"></i><span>Sair</span> </a>-->
         <a class="menu-logout">
             <i class="glyphicon glyphicon-log-out"></i>
             <span> <?=
