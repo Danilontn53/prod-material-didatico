@@ -314,7 +314,6 @@ a.desc:after {
     text-transform: uppercase;
     padding: 6px 12px;
     margin-bottom: 0;
-    line-height: 1.42857143;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
@@ -324,6 +323,9 @@ a.desc:after {
     border: 1px solid transparent;
     border-radius: 4px;
     position: relative;
-    top: -16px;
+    top: -80px;
+    width: 136px;
+    line-height: 13.3;
+    height: 109px;
 }
 
