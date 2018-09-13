@@ -307,7 +307,7 @@ a.desc:after {
     height: 35px;
 }
 
-.btn-logout{
+.btn-login-logout{
     font-size: 11px;
     background-color: transparent;
     display: inline;
@@ -327,5 +327,16 @@ a.desc:after {
     width: 136px;
     line-height: 13.3;
     height: 109px;
+}
+
+/* Modal Login */
+
+.login .modal-dialog {
+    width: 25%;
+    border-radius: 6px;
+}
+
+.login .modal-body {
+    padding: 15px 43px !important;
 }
 

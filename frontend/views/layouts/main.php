@@ -3,12 +3,10 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+use yii\bootstrap\Modal;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
-use common\widgets\Alert;
+use yii\helpers\Url;
 
 $root = "http://localhost:8080";
 
@@ -48,7 +46,15 @@ AppAsset::register($this);
         <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/contact'])?>" class="menu-green"><i class="fa fa-comment-o"></i><span>Fale Conosco</span></a>
         <!-- sem usuário logado no sistema -->
         <?php if (Yii::$app->user->isGuest){ ?>
-            <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/login'])?>" class="menu-red"><i class="fa fa-user"></i><span>Login</span></a>
+            <a class="menu-logout"><i class="fa fa-user"></i><span>
+                    <?= Html::button('Login' , [
+                        'value' => Url::to(['login']) ,
+                        'style' => 'background: transparent !important;  border-color: transparent !important;' ,
+                        'id' => 'btnModalRealizarLogin' ,
+                        'class' => 'btn-login-logout'
+                    ]) ?>
+                </span>
+            </a>
             <a href="<?=$root.Yii::$app->urlManager->createUrl(['site/signup'])?>" class="menu-contact"><i class="glyphicon glyphicon-open"></i><span>Cadastrar-se</span></a>
         <?php } else { ?>
         <a class="menu-logout">
@@ -57,7 +63,7 @@ AppAsset::register($this);
                 Html::beginForm(['/site/logout'] , 'post')
                 . Html::submitButton(
                     'Sair' ,
-                    ['class' => 'btn-logout']
+                    ['class' => 'btn-login-logout']
                 )
                 . Html::endForm()
                 ?>
@@ -65,6 +71,18 @@ AppAsset::register($this);
         </a>
         <?php }?>
     </nav>
+
+    <div class="login">
+        <?php
+        Modal::begin([
+            'header' => '<h4>Realizar Login</h4>',
+            'id' => 'modalRealizarLogin',
+        ]);
+
+        echo $this->render('..\site\modal_login');
+        Modal::end();
+        ?>
+    </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
@@ -148,3 +166,6 @@ AppAsset::register($this);
 </body>
 </html>
 <?php $this->endPage() ?>
+
+<?php $this->registerJs($this->render('@frontend/web/js/tela-login/tela-login.js')); ?>
+
