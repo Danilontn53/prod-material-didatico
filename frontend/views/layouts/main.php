@@ -35,6 +35,8 @@ AppAsset::register($this);
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
     </head>
 
     <body>
@@ -71,6 +73,15 @@ AppAsset::register($this);
         </a>
         <?php }?>
     </nav>
+
+<!-- Exemplo de menu 2 -->
+<!--    <div class="parent2">-->
+<!--        <div  class="test1"><i class="fa fa-user fa-2x"></i></div>-->
+<!--        <div class="test2"><i class="fa fa-graduation-cap fa-2x"></i></div>-->
+<!--        <div class="test3"><i class="fa fa-code fa-2x"></i></div>-->
+<!--        <div class="test4"><i class="fa fa-envelope-o fa-2x"></i></div>-->
+<!--        <div class="mask2"><i class="fa fa-home fa-3x"></i></div>-->
+<!--    </div>-->
 
     <div class="login">
         <?php
