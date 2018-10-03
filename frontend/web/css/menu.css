@@ -92,3 +92,7 @@ body {
     cursor:pointer;
     position:fixed;
 }
+
+.jumbotron {
+    color: white;
+}
